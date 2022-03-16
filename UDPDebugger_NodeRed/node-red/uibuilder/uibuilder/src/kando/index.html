@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><!-- 裏設定エリアの開始 -->
+    <meta charset="utf-8"><!-- 文字化け防止 -->
+    <script src="https://unpkg.com/vue"></script>
+    <script src="./index.js"></script>
+
+    <script src="../uibuilder/vendor/socket.io/socket.io.js"></script>
+    <script src="../uibuilder/vendor/vue/dist/vue.js"></script> 
+    <script src="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.js"></script> <!-- Dev version -->
+    <script src="./uibuilderfe.js"></script> 
+    
+</head><!-- 裏設定エリアの終了 -->
+ 
+<body><!-- 画面に表示されるエリアの開始 -->
+    <div id= "app" v-cloak>
+        <ul>
+            <li v-for="(item,index) in items">
+                <input type="text">
+                <br>
+                <input type="text" v-model="item.name">
+                <input type="text" v-model="item.comment">
+                <button v-on:click="sendMessage(index)">Send</button>        
+            </li>
+        </ul>
+
+        <!-- <table>
+            <tr>
+                <th>id</th>
+                <th>name </th>
+                <th>comment </th>
+            </tr>
+            <tr v-for="(item,index) in items" v-bind:key="index">
+                <td>{{index}}</td>
+                <td>{{item.name}} </td>
+                <td>{{item.comment}} </td>
+           </tr>
+        </table> -->
+    </div>
+
+</body><!-- 画面に表示されるエリアの終了 -->
+</html>

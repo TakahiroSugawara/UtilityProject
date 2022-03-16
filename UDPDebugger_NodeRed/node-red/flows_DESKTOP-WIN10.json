@@ -1,0 +1,1 @@
+[{"id":"eaa3d978.c6a638","type":"tab","label":"フロー 1","disabled":false,"info":""},{"id":"f14eaa9d.af4308","type":"inject","z":"eaa3d978.c6a638","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"","payloadType":"date","x":210,"y":280,"wires":[[]]}]

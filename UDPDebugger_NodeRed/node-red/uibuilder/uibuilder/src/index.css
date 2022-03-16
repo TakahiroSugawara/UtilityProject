@@ -1,0 +1,225 @@
+/* Cloak elements on initial load to hide the possible display of {{ ... }} 
+ * Add to the app tag or to specific tags
+ * To display "loading...", change to the following:
+ *    [v-cloak] > * { display:none }
+ *    [v-cloak]::before { content: "loading…" }
+ */
+[v-cloak] { display: none; }
+
+/*  Colours for Syntax Highlighted pre's */
+.syntax-highlight {color:white;background-color:black;padding:5px 10px;}
+.syntax-highlight > .key {color:#ffbf35}
+.syntax-highlight > .string {color:#5dff39;}
+.syntax-highlight > .number {color:#70aeff;}
+.syntax-highlight > .boolean {color:#b993ff;}
+
+
+    .bodyCSS {
+        margin-top:70px;
+        
+    }
+
+    .ColParent {  
+        height: 60vh;
+        overflow: auto;
+    }
+    
+    .textinput_copyareaColor
+    {
+        margin-bottom:5px;
+        background: #ececec;
+    }
+
+    .textinput_copyareaColor
+    {
+        margin-bottom:5px;
+        background: #ececec;
+    }
+
+    .textinputCSS
+    {
+        margin-left:2px;
+        margin-right:2px;
+        background: #ffffff;
+    }
+
+    .headercomment
+    {
+        border: 2px solid #000000;
+        color: white;
+        font-weight: 600;
+        border-color: white;
+        height: 50px;
+        text-align: center;
+        line-height:40px;
+        border-radius:5px;
+
+        margin-bottom:20px;
+        margin-left:20px;
+
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(114, 204, 235, 0.5), rgba(111, 129, 194, 0.5));
+    
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(133, 207, 231, 0.5), rgba(116, 133, 196, 0.5));
+  
+    }
+    .headersended
+    {
+        border: 2px solid #000000;
+        color: white;
+        font-weight: 600;
+        border-color: white;
+        height: 50px;
+        text-align: center;
+        line-height:40px;
+        border-radius:5px;
+
+        margin-bottom:20px;
+        margin-left:0px;
+
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(114, 204, 235, 0.5), rgba(111, 129, 194, 0.5));
+    
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(133, 207, 231, 0.5), rgba(116, 133, 196, 0.5));
+  
+    }
+
+    .sendbutton
+    {
+        font-weight: 600;
+        color: white;
+        border-color: white;
+        border-radius:10px;
+        /* fallback for old browsers */
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(114, 204, 235, 0.5), rgba(111, 129, 194, 0.5));
+    
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(133, 207, 231, 0.5), rgba(116, 133, 196, 0.5))      
+        
+    }
+
+    .tableDataColor
+    {
+        color: rgb(134, 134, 134);
+        background: #ffffff;
+    }
+
+    .tableHeaderColor
+    {                /* fallback for old browsers */
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(114, 204, 235, 0.5), rgba(111, 129, 194, 0.5));
+    
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(133, 207, 231, 0.5), rgba(116, 133, 196, 0.5));
+  
+        border-color: rgb(0, 0, 0);
+        color: white;
+
+        text-align: center;
+    }
+
+    .gradient-custom {
+        /* fallback for old browsers */
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(72, 198, 239, 0.5), rgba(74, 102, 206, 0.5));
+
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(72, 198, 239, 0.5), rgba(33, 70, 207, 0.5))      
+    }
+    
+    
+    /* ボタンのCSS */ 
+    .Layoutbutton
+    {
+        border: 2px solid #000000;
+        color: white;
+        font-weight: 600;
+        font-size: 0.8vw;
+        border-color: white;
+        height: 5vh;
+        width: 4vw;
+
+        text-align: center;
+        line-height:40px;
+        border-radius:5px;
+
+        margin-bottom:20px;
+        margin-left:20px;
+
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(114, 204, 235, 0.5), rgba(111, 129, 194, 0.5));
+    
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(133, 207, 231, 0.5), rgba(116, 133, 196, 0.5));
+  
+    }
+    
+    
+    /* ボタンのCSS */ 
+    .Stanpbutton
+    {
+        width: 4vw;
+        height: 5vh;
+        text-align: center;
+        line-height:40px;
+        margin-bottom:20px;
+        margin-left:20px;
+        font-size: 1.5vw;
+
+        text-align: center;
+        line-height:40px;
+        border-radius:5px;
+
+        border: 2px solid #000000;
+        border-color: white;
+        background: #48c6ef;
+
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: -webkit-linear-gradient(to right, rgba(114, 204, 235, 0.5), rgba(111, 129, 194, 0.5));
+    
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(to right, rgba(133, 207, 231, 0.5), rgba(116, 133, 196, 0.5));
+  
+    }
+    
+    
+    /* ボタンのCSS */ 
+    .NameLabel
+    {
+        
+        color: rgb(51, 51, 51);
+        font-size: small;
+        font-weight: 2500;
+        width: 5vw;
+        text-align: center;
+        
+    }
+
+    /* ボタンのCSS */ 
+    .CommentLabel
+    {
+        
+        color: rgb(51, 51, 51);
+        font-weight: 2500;
+        font-size: small;
+        width: 5vw;
+        text-align: center;
+        
+    }
+    
+    

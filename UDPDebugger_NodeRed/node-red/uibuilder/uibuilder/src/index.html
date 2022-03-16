@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head><!-- 裏設定エリアの開始 -->
+    <meta charset="utf-8"><!-- 文字化け防止 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Node-RED UI Builder - VueJS + bootstrap-vue default template</title>
+    <meta name="description" content="Node-RED UI Builder - VueJS + bootstrap-vue default template">
+    <link rel="icon" href="./images/node-blue.ico">
+    <link type="text/css" rel="stylesheet" href="../uibuilder/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.css" />
+    <!-- Your own CSS -->
+    <link type="text/css" rel="stylesheet" href="./index.css" media="all">
+
+</head><!-- 裏設定エリアの終了 -->
+
+<body class="gradient-custom"><!-- 画面に表示されるエリアの開始 -->
+    
+
+    <div id= "app" v-cloak  class="bodyCSS">
+        <b-container class="bv-example-row">
+            <b-row>
+                <b-col class="headercomment" cols="3">
+                    <div >コメント入力</div>
+                </b-col>
+                <b-col  cols="3"></b-col>
+                <b-col class="headersended" cols="3">
+                    <div>送信履歴</div>
+                </b-col>
+                <b-col  cols="3"></b-col>
+            </b-row>
+
+            <b-row>
+                <!-- #region コメント入力のブロック -->
+                <b-col class="ColParent" cols="5">
+                    <div v-for="(item,index) in items">
+                        <!-- コピペ用　テキスト入力 -->
+                        <input type="text" class="form-control textinput_copyareaColor" placeholder="copy area:　このTextは送信されません" >
+                        <!-- 送信用　テキスト入力 -->
+                        <label class="NameLabel">Name</label>
+                        <label class="CommentLabel">Comment</label>
+                        <div class="input-group">
+                            <input class= "textinputCSS form-control" type="text" v-model="items[index].name" placeholder="Name" >
+                            <input class= "textinputCSS form-control" type="text" v-model="items[index].comment" placeholder="Comment">
+                            <!-- <span  v-on:click="sendMessage(index)" class="input-group-text" >Send</span> -->
+                        <button v-on:click="sendMessage(index)" class="input-group-text sendbutton" >Send</button> 
+                        </div> 
+                        <div class="m-3"></div>
+                    </div>
+                </b-col>
+                <!-- #endregion -->
+
+                <b-col cols="1"></b-col>
+
+                <!-- #region コメントの送信履歴 -->
+                <b-col cols="5" class="ColParent">
+                    <table class="table" striped hover>
+                        <thead  class="tableHeaderColor">
+                            <tr>
+                                <th scope="col"  @click="sort('0')">Time</th>
+                                <th scope="col"  @click="sort('1')">Name</th>
+                                <th scope="col"  @click="sort('2')">Comment</th>
+                            <tr>
+                        </thead>
+                        <tbody  class="tableDataColor">
+                            <tr v-for="(item,index) in manage_message">
+                               <td>{{item[0]}}</td>
+                               <td>{{item[1]}}</td>
+                               <td>{{item[2]}}</td>
+                            </tr>
+                         </tbody>
+                    </table>
+                </b-col>
+                <!-- #endregion -->
+
+            </b-row>
+
+            <b-row>
+                <b-col cols="1">
+                    <button class="Layoutbutton" v-on:click="sendLayout(0)"> LayoutA </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Layoutbutton"  v-on:click="sendLayout(1)"> LayoutB </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Layoutbutton" v-on:click="sendLayout(2)"> LayoutC </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Layoutbutton" v-on:click="sendLayout(3)"> LayoutD </button>
+                </b-col> 
+                <b-col cols="1">
+                    <button class="Layoutbutton" v-on:click="sendLayout(4)"> LayoutE </button>
+                </b-col>                
+            </b-row>
+
+            <b-row>
+                <b-col cols="1">
+                    <button class="Stanpbutton" v-on:click="sendEmoji(0)"> 😀 </button>
+                </b-col>
+                <b-col  cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(1)"> 😂 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(2)"> 😍 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(3)"> 😳 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(4)"> 🤔 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(5)"> 🧡 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(6)"> 👍 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(7)"> 👏 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(8)"> 🎉 </button>
+                </b-col>
+                <b-col cols="1">
+                    <button class="Stanpbutton"  v-on:click="sendEmoji(9)"> ⭐ </button>
+                </b-col>
+            </b-row>
+
+        </b-container>
+    </div>
+
+    <!-- These MUST be in the right order. Note no leading / -->
+    <!-- REQUIRED: Socket.IO is loaded only once for all instances. Without this, you don't get a websocket connection -->
+    <script src="../uibuilder/vendor/socket.io/socket.io.js"></script>
+
+    <!-- Vendor Libraries - Load in the right order, use minified, production versions for speed -->
+    <script src="../uibuilder/vendor/vue/dist/vue.js"></script> <!-- dev version with component compiler -->
+    <!-- <script src="../uibuilder/vendor/vue/dist/vue.min.js"></script>   prod version with component compiler -->
+    <!-- <script src="../uibuilder/vendor/vue/dist/vue.runtime.min.js"></script>   prod version without component compiler -->
+    <script src="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.js"></script> <!-- Dev version -->
+    <!-- <script src="../uibuilder/vendor/bootstrap-vue/dist/bootstrap-vue.min.js"></script>   Prod version -->
+
+    <!-- REQUIRED: Sets up Socket listeners and the msg object -->
+    <script src="./uibuilderfe.js"></script> <!-- dev version -->
+    <!-- <script src="./uibuilderfe.min.js"></script>     prod version -->
+
+    <!-- OPTIONAL: You probably want this. Put your custom code here -->
+    <script src="./index.js"></script>
+
+</body><!-- 画面に表示されるエリアの終了 -->
+</html>

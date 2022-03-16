@@ -1,0 +1,12 @@
+{
+    "name": "node-red-project",
+    "description": "A Node-RED Project",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "bootstrap-vue": "^2.21.2",
+        "node-red-contrib-uibuilder": "~4.1.4",
+        "node-red-debugger": "~1.1.1",
+        "vue": "^2.6.14"
+    }
+}

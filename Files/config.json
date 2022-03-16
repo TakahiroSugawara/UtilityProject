@@ -1,0 +1,12 @@
+{
+	"$comment": "コメントをここに入力することができます。
+	改行も
+	OKです。",
+	"remote_ip": "127.0.0.1",
+	"remote_port": 12345,
+	"local_port": 23456,
+	"mode": "g",
+	"data_path": "C:\\01_Job\\2201_Lotte\\data\\001_room\\blackboard",
+	"server_setting_path": "\\\\127.0.0.1\\Contents\\info",
+	"server_customfile_path": "C:\\Contents\\share"
+}
